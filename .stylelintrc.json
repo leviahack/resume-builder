@@ -1,0 +1,10 @@
+{
+ "extends": [
+    "stylelint-rscss/config",
+    "stylelint-config-standard"
+  ],
+  "ignoreFiles": [],
+  "rules": {
+    "rscss/no-descendant-combinator": false
+  }
+}
