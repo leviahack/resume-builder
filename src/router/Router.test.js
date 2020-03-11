@@ -3,11 +3,11 @@ import React from 'react';
 import ReactTestRender from 'react-test-renderer';
 
 // Own constants/actions/components
-import App from './App';
+import Router from './Router';
 
-describe('App: ', () => {
+describe('Router: ', () => {
   test('should render correctly', () => {
-    const component = ReactTestRender.create(<App />);
+    const component = ReactTestRender.create(<Router />);
     const render = component.toJSON();
     expect(render).toMatchSnapshot();
   });
