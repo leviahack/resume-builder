@@ -7,7 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // Styles
-import './index.scss';
+import 'styles/main.scss';
 
 render(<App />, document.getElementById('root'));
 
