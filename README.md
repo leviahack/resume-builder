@@ -1,4 +1,6 @@
 # Resume Builder
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bdc072dd-b95f-4628-b0de-012c3ca935fc/deploy-status)](https://app.netlify.com/sites/condescending-golick-85f513/deploys)
+
 React + Redux application to build and personalize a curriculum vitae.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
