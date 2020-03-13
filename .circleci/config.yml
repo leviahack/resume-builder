@@ -20,18 +20,18 @@ jobs:
       - run:
           name: Danger
           command: yarn danger ci
-      - run: yarn test --coverage --watchAll=false
+      - run:
+          name: Unit Tests
+          command: yarn test --coverage --watchAll=false
       - store_artifacts:
-          path: ~/resume-builder/coverage/
-      - store_test_results:
           path: ~/resume-builder/coverage/
       - run:
           name: Build project
           command: yarn run build
 
   deploy-develop:
-    macos:
-      xcode: "11.3.0"
+    machine:
+      image: ubuntu-1604:201903-01
     steps:
       - run:
           command: curl -X POST -d {} ${NTFY_ENDPOINT}
