@@ -1,17 +1,17 @@
 // Third-party dependencies
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 // Material UI
 import Button from '@material-ui/core/Button';
-
-// Own constants/actions/components
-import { LOCALE_ES } from 'constants/strings';
+import { selectors } from 'constants/strings.store';
 
 // Styles
 import './NotFound.scss';
 
 const NotFound = () => {
-  const constants = LOCALE_ES.pages.notFound;
+  const languageConstants = useSelector(selectors.constants);
+  const constants = languageConstants.pages.notFound;
   const fullLogo = `${process.env.PUBLIC_URL}/assets/img/full_logo.png`;
 
   return (
