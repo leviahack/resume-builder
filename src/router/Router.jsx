@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 // Own constants/actions/components
 import Home from 'containers/Home/Home';
+import NotFound from 'containers/NotFound/NotFound';
 
 const Router = () => (
   <BrowserRouter>
@@ -11,6 +12,8 @@ const Router = () => (
       <Route exact path="/">
         <Home />
       </Route>
+
+      <Route component={NotFound} />
     </Switch>
   </BrowserRouter>
 );

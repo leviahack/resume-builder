@@ -3,10 +3,27 @@
 // -----------------------------------------------------------------------------
 
 // COLOR PALETTE
+$palette: (
+  black: #000,
+  bondi-blue: #029bae,
+  dusty-gray: #9c9c9c,
+  mine-shaft: #323232,
+  scampi: #675ea0,
+  white: #fff
+);
+
+// MEDIA QUERIES SIZES
+$queries: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// CSS Variables
 // Example of use in the following link
 // https://stackoverflow.com/a/49376995
 :root {
-  --black-color: #000;
-  --mine-shaft-color: #323232;
-  --white-color: #fff;
+  --theme-primary-color: #{ map-get($palette, 'bondi-blue') };
+  --theme-secondary-color: #{ map-get($palette, 'scampi') };
 }

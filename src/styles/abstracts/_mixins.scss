@@ -1,0 +1,63 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide scss mixins.
+// -----------------------------------------------------------------------------
+
+/*
+ * Mixin for media queries
+ * We occasionally use media queries for the given screen size or higher
+ * example of use
+ * @include media-breakpoint-up(sm) { ... }
+ */
+
+@mixin media-breakpoint-up($breakpoint) {
+  $sm: map-get($queries, 'sm');
+  $md: map-get($queries, 'md');
+  $lg: map-get($queries, 'lg');
+  $xl: map-get($queries, 'xl');
+
+  @if $breakpoint == sm {
+    @media (min-width: $sm) { @content; }
+  }
+
+  @if $breakpoint == md {
+    @media (min-width: $md) { @content; }
+  }
+
+  @if $breakpoint == lg {
+    @media (min-width: $lg) { @content; }
+  }
+
+  @if $breakpoint == xl {
+    @media (min-width: $xl) { @content; }
+  }
+}
+
+/*
+ * Mixin for media queries
+ * We occasionally use media queries for the given screen size or smaller
+ * example of use
+ * @include media-breakpoint-down(sm) { ... }
+ */
+
+@mixin media-breakpoint-down($breakpoint) {
+  $sm: calc(#{map-get($queries, 'sm')} - 1px);
+  $md: calc(#{map-get($queries, 'md')} - 1px);
+  $lg: calc(#{map-get($queries, 'lg')} - 1px);
+  $xl: cacl(#{map-get($queries, 'xl')} - 1px);
+
+  @if $breakpoint == sm {
+    @media (max-width: $sm) { @content; }
+  }
+
+  @if $breakpoint == md {
+    @media (max-width: $md) { @content; }
+  }
+
+  @if $breakpoint == lg {
+    @media (max-width: $lg) { @content; }
+  }
+
+  @if $breakpoint == xl {
+    @media (max-width: $xl) { @content; }
+  }
+}
