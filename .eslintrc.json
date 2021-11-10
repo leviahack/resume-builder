@@ -1,0 +1,83 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "extraFileExtensions": [".json"],
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "array-bracket-newline": ["error", { "multiline": true }],
+    "array-element-newline": ["error", "consistent"],
+    "object-curly-newline": ["error", {
+        "ObjectExpression": { "consistent": true },
+        "ObjectPattern": { "multiline": true },
+        "ImportDeclaration": { "multiline": true },
+        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+    }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [ "error" ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-first-prop-new-line": [
+      1,
+      "multiline"
+    ],
+    "react/jsx-closing-bracket-location": [
+      1,
+      "after-props"
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  }
+}

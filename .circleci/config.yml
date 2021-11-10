@@ -1,0 +1,46 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@1.1.6
+
+jobs:
+  build-and-test:
+    working_directory: ~/resume-builder
+    executor:
+      name: node/default
+      tag: '14.17.0'
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: yarn install
+      - run:
+          name: ESLint
+          command: yarn run lint:js --quiet --output-file eslint-report.md -f node_modules/eslint-formatter-markdown/markdown.js
+      - run:
+          name: Danger
+          command: yarn danger ci
+      - run:
+          name: Unit Tests
+          command: yarn test --coverage --watchAll=false
+      - store_artifacts:
+          path: ~/resume-builder/coverage/
+      - run:
+          name: Build project
+          command: yarn run build
+
+  deploy-develop:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - run:
+          command: curl -X POST -d {} ${NTFY_ENDPOINT}
+
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
+      - deploy-develop:
+          filters:
+            branches:
+              only: develop
