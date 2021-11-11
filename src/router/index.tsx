@@ -1,11 +1,10 @@
 // Third-party dependencies
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Own components/hooks/constants
 import Home from 'views/Home';
 
-const Router: React.FC = () => (
+const Router = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />}>

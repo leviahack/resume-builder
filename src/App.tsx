@@ -1,12 +1,11 @@
 // Third party dependencies
-import React from 'react';
 import { Provider } from 'react-redux';
 
 // Own components/hooks/constants
 import Router from 'router';
 import { store } from 'store';
 
-export const AppContent: React.FC = () => <Router />;
+export const AppContent = () => <Router />;
 
 const App = () => (
   <Provider store={store}>
