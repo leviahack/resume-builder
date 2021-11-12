@@ -8,7 +8,7 @@ jobs:
     working_directory: ~/resume-builder
     executor:
       name: node/default
-      tag: '11.10.1'
+      tag: '14.17.0'
     steps:
       - checkout
       - node/with-cache:

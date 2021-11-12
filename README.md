@@ -3,7 +3,7 @@
 
 React + Redux application to build and personalize a curriculum vitae.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Quick Start
 
@@ -15,7 +15,8 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 ## Requirements
 
-* [node.js](https://nodejs.org) >= v8.10
+* [node.js](https://nodejs.org) >= v10
+* npm >= 5.2
 
 ## Contributing
 

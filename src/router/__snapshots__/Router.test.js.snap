@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Router:  should render correctly 1`] = `
-<h1>
-  Resume Builder
-</h1>
-`;

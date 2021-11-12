@@ -15,9 +15,7 @@ Document each and every instance where you disable a linter. _Disable linters on
 
 ## Styles
 
-This project follow [rscss](https://rscss.io/) rules and is configured to run a style linter anytime you attempt to commit a change. To run this task by yourself, run `yarn lint:scss`.
-
-See `.stylelintrc.json` to learn more about the rules and exceptions.
+This project follow [rscss](https://rscss.io/) rules and uses [emotion](https://emotion.sh/docs/introduction) for writing css styles with JavaScript.
 
 ## Branching
 

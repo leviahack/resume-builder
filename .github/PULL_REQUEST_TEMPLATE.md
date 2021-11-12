@@ -1,6 +1,6 @@
 ## Description
 
-[link to the US](#)
+[name of US](link to the US)
 
 _Description of the feature/issue_
 
