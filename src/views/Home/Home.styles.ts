@@ -6,7 +6,7 @@ export default styled.div`
   text-align: center;
 
   h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
   }
 `;
