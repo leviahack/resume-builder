@@ -63,7 +63,8 @@
     "react/jsx-closing-bracket-location": [
       1,
       "after-props"
-    ]
+    ],
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {
