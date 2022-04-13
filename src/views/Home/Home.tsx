@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +12,38 @@ import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons';
 import StyledWrapper from './Home.styles';
 
 library.add(fab, faCoffee, faUser);
+
+type Inputs = {
+  name: string,
+  lastname: string,
+};
+
+const formExample = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  // eslint-disable-next-line
+  const onSubmit: SubmitHandler<Inputs> = (data) => alert(JSON.stringify(data));
+
+  return (
+    <Row center="lg">
+      <Col lg={12}>
+        <h4>React Form Hoock:</h4>
+      </Col>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Col lg={12}>
+          <input placeholder="Nombre" {...register('name', { required: true })} />
+          {errors.name && <span> * This field is required</span>}
+        </Col>
+        <Col lg={12}>
+          <input placeholder="Apellido" {...register('lastname', { required: true })} />
+          {errors.lastname && <span> * This field is required</span>}
+        </Col>
+        <Col lg={12}>
+          <input type="submit" />
+        </Col>
+      </form>
+    </Row>
+  );
+};
 
 const Home = () => {
   const { t: translation } = useTranslation();
@@ -51,13 +84,12 @@ const Home = () => {
           <p>One columns</p>
         </Col>
         <Col xs={12} md={6} lg={4}>
-          <p>Other colum</p>
+          { renderIcons() }
         </Col>
         <Col xs={12} md={12} lg={4}>
-          <p>Last colum</p>
+          { formExample() }
         </Col>
       </Row>
-      {renderIcons()}
       { /* The children of react-router */ }
       <Outlet />
     </StyledWrapper>
