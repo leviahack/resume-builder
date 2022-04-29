@@ -1,12 +1,13 @@
 // Third-party dependencies
 import { Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Col, Row } from 'react-styled-flexboxgrid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { Grid } from '@mui/material';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faCoffee, faUser } from '@fortawesome/free-solid-svg-icons';
+import Button from '@mui/material/Button';
 
 // Own components/hooks/constants
 import StyledWrapper from './Home.styles';
@@ -24,24 +25,24 @@ const formExample = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => alert(JSON.stringify(data));
 
   return (
-    <Row center="lg">
-      <Col lg={12}>
+    <Grid container>
+      <Grid item lg={12}>
         <h4>React Form Hoock:</h4>
-      </Col>
+      </Grid>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Col lg={12}>
+        <Grid item lg={12}>
           <input placeholder="Nombre" {...register('name', { required: true })} />
           {errors.name && <span> * This field is required</span>}
-        </Col>
-        <Col lg={12}>
+        </Grid>
+        <Grid item lg={12}>
           <input placeholder="Apellido" {...register('lastname', { required: true })} />
           {errors.lastname && <span> * This field is required</span>}
-        </Col>
-        <Col lg={12}>
+        </Grid>
+        <Grid item lg={12}>
           <input type="submit" />
-        </Col>
+        </Grid>
       </form>
-    </Row>
+    </Grid>
   );
 };
 
@@ -57,7 +58,7 @@ const Home = () => {
       <p>Simple Icon by string: </p>
       <FontAwesomeIcon icon="user" />
       <br />
-
+      <Button variant="contained">Hello Material Ui</Button>
       <p>Simple Icon by library use : </p>
       <FontAwesomeIcon icon={['fab', 'apple']} />
       {' '}
@@ -79,17 +80,17 @@ const Home = () => {
   return (
     <StyledWrapper>
       <h1>{translation('title')}</h1>
-      <Row>
-        <Col xs={12} md={6} lg={4}>
+      <Grid container>
+        <Grid item xs={6}>
           <p>One columns</p>
-        </Col>
-        <Col xs={12} md={6} lg={4}>
+        </Grid>
+        <Grid item xs={12} md={6} lg={4}>
           { renderIcons() }
-        </Col>
-        <Col xs={12} md={12} lg={4}>
+        </Grid>
+        <Grid item xs={12} md={12} lg={4}>
           { formExample() }
-        </Col>
-      </Row>
+        </Grid>
+      </Grid>
       { /* The children of react-router */ }
       <Outlet />
     </StyledWrapper>
