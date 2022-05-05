@@ -2,7 +2,7 @@
 import { render } from '@testing-library/react';
 
 // Own components/hooks/constants
-import Home from './Home';
+import Home from './Home.component';
 
 describe('Home View', () => {
   test('should render title', () => {
