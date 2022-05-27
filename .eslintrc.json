@@ -42,8 +42,12 @@
         "ExportDeclaration": { "multiline": true, "minProperties": 3 }
     }],
     "no-param-reassign": ["error", { "props": false }],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [ "error" ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       2,
