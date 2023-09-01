@@ -18,7 +18,7 @@ jobs:
           name: ESLint
           command: yarn run lint:js --quiet --output-file eslint-report.md -f node_modules/eslint-formatter-markdown/markdown.js
       - run:
-          name: Danger
+          name: Generate Danger Report
           command: yarn danger ci
       - run:
           name: Unit Tests
